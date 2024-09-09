@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Guess Master</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url("Other Images/1325726.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+            padding-top: 50px;
+            padding-right: 90px;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-right: 40px;
+            font-size: 120%;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: larger;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar li a:hover {
+            color: rgb(250, 10, 10);
+        }
+
+        .container {
+            text-align: left;
+            padding-left: 150px;
+            padding-right: 1000px;
+        }
+
+        .container h1 {
+            color: rgb(255, 255, 255);
+            font-size: 350%;
+            display: inline;
+        }
+
+        .container h2 {
+            color: rgb(250, 10, 10);
+            font-size: 350%;
+            display: inline;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 820px;
+        }
+
+        .contact-info {
+            padding: 15px;
+            background: none;
+            color: white;
+            margin: 100px 150px;
+            width: 260px;
+            font-size: 25px;
+        }
+
+        .contact-info h3 {
+            color: rgb(250, 10, 10);
+        }
+
+        .contact-info h5 {
+            color: white;
+        }
+
+        .contact-info i {
+            color: rgb(250, 10, 10);
+            padding-right: 7px;
+        }
+
+        .contact-info p {
+            color: rgb(155, 155, 155);
+        }
+
+        .contact-form {
+            padding: 20px;
+            font-size: larger;
+            background: transparent;
+            margin: 100px 150px;
+            height: 500px;
+            width: 350px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .contact-form h1 {
+            color: white
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(250, 10, 10);
+            color: white;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button:hover {
+            background-color: white;
+            color: rgb(250, 10, 10);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <a class="container">
+                <h1>G</h1>
+                <h2>M</h2>
+            </a>
+            <li><a href="NavsGame.html">Home</a></li>
+            <li><a href="Play.html">Play</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <h3>Contact us</h3>
+            <h5><i class="fas fa-map-marker-alt"></i><strong> ADDRESS:</strong></h5>
+
+            <p>33844 King Rd, Abbotsford BC V2S 7M7</p>
+
+            <h5><i class="fas fa-phone"></i><strong> PHONE:</strong></h5>
+
+            <p>+1 (123)-456-7890</p>
+
+            <h5><i class="fas fa-envelope"></i><strong> EMAIL:</strong></h5>
+
+            <p>Navraaj.Chouhan@student.ufv.ca</p>
+
+            <h5><i class="fas fa-globe"></i><strong> WEBSITE:</strong></h5>
+
+               <p>nav4545.github.io/</p>
+        </div>
+
+
+        <div class="contact-form">
+
+            <form action="/submit-form" method="post">
+                <h1>Get in touch!</h1>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                <textarea id="message" name="message" rows="12" placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<footer>
+
+
+</footer>

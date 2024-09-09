@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+    <title>MotorMystery</title>
+    <style>
+        body {
+            background-image: url("Other Images/pexels-adrien-olichon-2387793.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+            padding-top: 50px;
+            padding-right: 90px;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin-right: 40px;
+            font-size: 120%;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: larger;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar li a:hover {
+            color: rgb(250, 10, 10);
+        }
+
+        .container {
+            text-align: left;
+            padding-left: 150px;
+            padding-right: 1000px;
+        }
+
+        .container h1 {
+            color: rgb(255, 255, 255);
+            font-size: 350%;
+            display: inline;
+        }
+
+        .container h2 {
+            color: rgb(250, 10, 10);
+            font-size: 350%;
+            display: inline;
+        }
+
+        #game {
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        #gameImage {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+            border: 1px solid rgb(255, 255, 255)
+        }
+
+        .options button:hover {
+            color: rgb(250, 10, 10);
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+
+        .options button {
+            margin: 7px;
+            padding: 10px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-decoration: none;
+            border: 2px solid rgb(250, 10, 10);
+            border-radius: 5px;
+            background-color: rgb(250, 10, 10);
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 25px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <a class="container">
+                <h1>M</h1>
+                <h2>M</h2>
+            </a>
+            <li><a href="NavsGame.html">Home</a></li>
+            <li><a href="Play.html">Play</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="game">
+        <img id="gameImage" src="" alt="Guess this image">
+        <div id="options" class="options"></div>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="scriptMM.js"></script>
+
+</body>
+<footer>
+
+
+</footer>
