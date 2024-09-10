@@ -33,6 +33,8 @@ const gameData = [
 ];
 
 let currentQuestionIndex = 0;
+let correctAnswers = 0;
+let incorrectAnswers = 0;
 
 // Function to shuffle the gameData array
 function shuffleArray(array) {
@@ -58,7 +60,7 @@ function displayQuestion() {
     currentQuestion.options.forEach(option => {
         const button = document.createElement('button');
         button.textContent = option;
-        button.onclick = function () { checkAnswer(option); };
+        button.onclick = () => checkAnswer(option);
         optionsDiv.appendChild(button);
     });
 }
@@ -70,45 +72,43 @@ function checkAnswer(selectedOption) {
     if (selectedOption === correctOption) {
         resultDiv.textContent = "Correct!";
         resultDiv.style.color = "green";
+        correctAnswers++;
     } else {
-        resultDiv.textContent = "Wrong! The correct answer was " + correctOption;
+        resultDiv.textContent = `Wrong! The correct answer was ${correctOption}`;
         resultDiv.style.color = "red";
+        incorrectAnswers++;
     }
-
-    // Debug: Log the current state
-    console.log("Question Index Before Timeout:", currentQuestionIndex);
 
     setTimeout(() => {
         if (currentQuestionIndex < gameData.length - 1) {
             currentQuestionIndex++;
-            console.log("Moving to the next question, Index:", currentQuestionIndex);
             displayQuestion();
         } else {
-            console.log("Last question answered, showing start over option");
-            displayStartOverButton();
+            displayFinalScore();
         }
-    }, 1000); // 1 second delay
+    }, 1000); // 1-second delay
 }
 
-function displayStartOverButton() {
+function displayFinalScore() {
     const optionsDiv = document.getElementById('options');
     const resultDiv = document.getElementById('result');
-    optionsDiv.innerHTML = '';
-    resultDiv.innerHTML = 'Game Over! Click "Start Over" to play again';
+    optionsDiv.innerHTML = ''; // Clear options
+
+    resultDiv.innerHTML = `Game Over! Click "Start Over" to play again! <br>Score: ${correctAnswers}/${gameData.length}`;
 
     const startOverButton = document.createElement('button');
     startOverButton.textContent = "Start Over";
-    startOverButton.onclick = function () {
+    startOverButton.onclick = () => {
         currentQuestionIndex = 0;
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        shuffleArray(gameData); // Reshuffle the questions for a new game
         displayQuestion();
     };
     optionsDiv.appendChild(startOverButton);
-
-    console.log("Start Over button displayed.");
 }
 
-// Ensure this listener is correctly placed and working
+// Initialize the game when the document is ready
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Document loaded, displaying first question.");
     displayQuestion();
 });
