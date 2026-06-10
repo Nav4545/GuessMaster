@@ -36,7 +36,7 @@ let currentQuestionIndex = 0;
 let correctAnswers = 0;
 let incorrectAnswers = 0;
 
-// Function to shuffle the gameData array
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -44,7 +44,7 @@ function shuffleArray(array) {
     }
 }
 
-// Shuffle the gameData array at the start
+
 shuffleArray(gameData);
 
 function displayQuestion() {
@@ -55,7 +55,7 @@ function displayQuestion() {
 
     gameImage.src = currentQuestion.imgSrc;
     optionsDiv.innerHTML = '';
-    resultDiv.innerHTML = ''; // Clear previous result
+    resultDiv.innerHTML = '';
 
     currentQuestion.options.forEach(option => {
         const button = document.createElement('button');
@@ -92,7 +92,7 @@ function checkAnswer(selectedOption) {
 function displayFinalScore() {
     const optionsDiv = document.getElementById('options');
     const resultDiv = document.getElementById('result');
-    optionsDiv.innerHTML = ''; // Clear options
+    optionsDiv.innerHTML = ''; 
 
     resultDiv.innerHTML = `Game Over! Click "Start Over" to play again! <br>Score: ${correctAnswers}/${gameData.length}`;
 
@@ -102,13 +102,13 @@ function displayFinalScore() {
         currentQuestionIndex = 0;
         correctAnswers = 0;
         incorrectAnswers = 0;
-        shuffleArray(gameData); // Reshuffle the questions for a new game
+        shuffleArray(gameData);
         displayQuestion();
     };
     optionsDiv.appendChild(startOverButton);
 }
 
-// Initialize the game when the document is ready
+
 document.addEventListener('DOMContentLoaded', () => {
     displayQuestion();
 });
